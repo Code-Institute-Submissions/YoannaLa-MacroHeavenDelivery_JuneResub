@@ -1,93 +1,59 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block extra_title %}Home{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
 
+<div class="container-fluid">
+    <div class="row">
 
-<!-- Welcome container -->
-<div class="welcome-container">
-    <div class="container-fluid">
-        <div class="row hero-height">
-            <div class="col-12 col-md-4 text-right welcome-content pr-2 pl-md-2">
-                <h1>Food plan<br>with a difrerence</h1>
-                <a class="btn" href="{#}">See menu here!</a>
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.author }}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
             </div>
-        </div>
-    </div>
-</div>
-<div class="home-info-cont">
-    <div class="text-center mb-2">
-        <h2>What is macro dieta? </h2>
-        <p>In every diet and for every weight loss goal there are three major macro nutrients that affect how (and yes, if) we reach our goals. 
-            The building blocks of every diet are fats, carbs, and proteins. 
-            <br>Many people find counting macros to be helpful in building flexible and sustainable diets, without restrictive unhealthy behaviors. 
-            <br>So what are these macros? 
-            Why do they matter for health and weight loss, and does the type of macros really matter?</p>
-    </div>
-    <hr class="home-break">
-    <!-- Details on food -->
-    <div class="row d-flex justify-content-center mb-5 mt-5">
-        <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
-            <div class=" home-info-text">
-                <h3 class="mb-3">Proteins</h3>
-                <p>While proteins aren’t usually used for fuel, they are an important part of the diet.</p>
-                <br>
-                <p>Consuming protein is critical to healing and building tissue in the body. 
-                    That’s why when doing a hard workout it’s important to consume protein to assist the body in recovery.
-                    Proteins come in two types: plant based and animal based. 
-                    Animal based proteins are all the proteins that probably come to mind when you think of eating protein:
-                    meat, chicken, dairy, eggs. But many plants are also high-protein and a great alternative protein source. 
-                    Chickpeas, beans, lentils, edamame, tofu, and seitan are just a few examples.</p>   
-            </div>
-        </div>
-        <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{ MEDIA_URL }}macronutrients.jpg" class="img-fluid d-none d-md-block" alt="pictures of nutrients">
-        </div>
-    </div>
-    <hr class="home-break">
-       <div class="row d-flex justify-content-center mb-5 mt-5">
-        <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{ MEDIA_URL }}healthy-food3.jpg" class="img-fluid d-none d-md-block" alt="image of healthy food">
-        </div>
-        <div class="col-12 col-md-7 col-lg-4 pl-0 pl-md-5">
-            <div class=" home-info-text">
-            <h3 class="mb-3">Carbs</h3>
-            <p>The macro we most often hear about in popular culture and surrounding the weight loss discussion is of course carbs</p>
-            <br>
-            <p> But believe it or not, carbs are not all bad. 
-                In fact, carbs are an absolutely necessary component of any sustainable weight loss and health program. 
-                Carbs provide the body with the most easily accessible energy and also play an important role in healthy brain activity. But some carbs are better than others.
-                Complex carbs are better for someone trying to lose weight as they are composed of longer, more complex sugar molecules, meaning your body takes a longer time to break them down.
-                This leaves you feeling fuller for longer. Simple carbs, on the other hand, are broken down quickly by the body for immediate use. 
-                Complex carbs are found in foods like vegetables, beans or whole grains, and simple carbs are found in fruits, sugars, and syrups. 
-            </p>
-            <br>
-            <p> That quick breakdown of the simple carbohydrates explains why when we consume a candy bar, we sometimes get a “sugar rush.</p>
-            </div>
-        </div>
-    </div>
-    <hr class="home-break">
-    <div class="row d-flex justify-content-center mb-5 mt-5">
-        <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
-            <div class=" home-info-text">
-                <h3 class="mb-3">Fats</h3>
-                <p>Fats help your body store vitamins and take part in building hormones such as cholesterol, testosterone and estrogen.</p>
-                <br>
-                <p>When you consume high quality fats, such as those found in nuts, avocados, olives, and fish, your body is better able to store the nutrients you consume from your other macros. 
-                    Just like there are different types of carbs, there are also different types of fats.
-                    The four major types are saturated fat, trans fat, monounsaturated fat, and polyunsaturated fat. 
-                    The healthiest types of fats are monounsaturated (like in avocados) and polyunsaturated (like in fish). Saturated fats are the kinds of fats found in animal products, and in excess can be unhealthy for the heart. Trans fats are the worst form of fats and while they are sometimes found in animal products as well, they are most unhealthy in the form of partially hydrogenated oils. These are vegetable oils that have been chemically altered to stay more solid at room temperature. 
-                    </p>
-                <br>
-                <p>Snacks foods and fats foods are notoriously high in trans fats.</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{ MEDIA_URL }}heatlh-food4.jpg" class="img-fluid d-none d-md-block" alt="image of food">
-        </div>
-    </div>
-</div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
 
-{% endblock %}
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{%endblock%}

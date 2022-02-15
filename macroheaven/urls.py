@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('macroblog.urls'), name='macroblog_urls'),
     path('summernote/', include('django_summernote.urls')),
-    path('', get_menu_list, name='get_menu_list'),
-     path('homepage/', get_home_page, name='homepage'),
+    path('homepage/', get_home_page, name='homepage'),
+    path('', get_menu_list, name='menulist'),
+    path('accounts/', include('allauth.urls')),
 ]

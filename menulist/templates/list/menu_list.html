@@ -1,12 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>list of menu items </h1> 
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}Products{% endblock %}
+
+{% block content %}
+
+<div class="row mx-auto main-container products-cont">
+    <div class="col-12 col-lg-8 mx-auto">
+        <h1 class="page-title">Products</h1>
+        <hr class="page-title-hr">
+        <div class="row text-center mt-3 mb-2">
+            <div class="col-12 col-md-6">
+                <!-- Catagory selector buttons -->
+                {% for c in current_categories %}
+                    <a class="btn mr-3" href="{% url 'products' %}?category={{ c.name }}">{{ c.friendly_name }}</a>
+                {% endfor %}
+                {% if products|length < 1%}
+                    <p class="mt-5">Sorry, there are no products available at the moment</p>
+                    <a class="btn" href="{% url 'products' %}">Shop Products</a>
+                {% else %}
+                    <p class="mt-4">{{ products|length }} Products</p>
+                {% endif %}
+            </div>
+            <!-- Product sort-by box -->
+            <div class="col-12 col-md-6">
+                <div>
+                    <select id="sort-selector">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        <option value="artist_asc" {% if current_sorting == 'artist_asc' %}selected{% endif %}>Artist (A-Z)</option>
+                        <option value="artist_desc" {% if current_sorting == 'artist_desc' %}selected{% endif %}>Artist (Z-A)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <!-- Product cards -->
+        {% for product in products %}
+            <div class="col-12 col-sm-6 col-md-4 col-xl-3 d-flex justify-content-center">
+                <div class="card item">
+                    <a href="{% url 'product_detail' product.id %}">
+                        <div>
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}">
+                        {% else %}
+                            <img src="{{ MEDIA_URL }}no-image.png" class="card-img img-fluid" alt="{{ product.name }}">
+                        {% endif %}
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                "{{ product.name }}"
+                            </p>
+                            <p>
+                                €{{ product.price }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script src="{% static 'products/js/sorting.js' %}"></script>
+{% endblock %}
