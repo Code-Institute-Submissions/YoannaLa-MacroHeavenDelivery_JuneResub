@@ -12,10 +12,11 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="#" width="100%">
+                <img src="https://www.vegan.io/blog/assets/healthy-meals-for-children-2018-05-14/healthy-meals-for-children-8ebb85b66ecb9e20a24c808d39a3745d6cdc7d4b0cfb6dc3b2c3307d783affac.jpg" width="100%" height="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%" height="100px">
+                <img class="card-img-top" src=" {{ post.featured_image.url }}" >
                 {% endif %}
+              
             </div>
         </div>
     </div>

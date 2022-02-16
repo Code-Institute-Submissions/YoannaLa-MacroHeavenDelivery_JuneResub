@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}Meal Details {% endblock %}
+
+{% block content %}
+
+<div class="container product-info-container mx-auto">
+    <h1 class="page-title">"{{ meal.name }}"</h1>
+    <hr class="page-title-hr">
+    <div class="row mt-5">
+        <!-- Product image container -->
+        <div class="col-12 col-md-6 lg-4">
+            <div class="info-img-cont">
+            <a href="{{ product.image.url }}" target="blank">
+                {% if meal.image %}
+                <img src="{{ meal.image.url }}" alt="{{ product.name }}" class="img-fluid product-info-img">
+                {% else %}
+                <img src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}" class="img-fluid product-info-img">
+                {% endif %}
+            </a>
+        </div>
+        </div>
+        <!-- Product info container -->
+        <div class="col-12 col-md-6 lg-4 product-info-text">
+            <p class="info-text artist-name mb-2"><strong>{{ product.artist }}</strong></p>
+            <p class="info-text mb-1">{{ meal.details }}</p>
+            {% if meal.macro %}
+                <p class="info-text mb-1">{{ product.size }}</p>
+            {% endif %}
+            {% if meal.category %}
+                <p class="info-text mb-1">{{ meal.category.friendly_name }}</p>
+            {% endif %}
+            <p class="info-text mb-1"><strong>€{{ meal.price }}</strong></p>
+            <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group qty-form">
+                        <div class="input-group mb-3">
+                            <p>Qty:</p>
+                            <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
+                            max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                        </div>
+                    </div>
+                </div> 
+                <div>
+                    <a href="{% url 'products' %}" class="btn">Keep on adding </a>
+                    <input type="submit" class="btn" value="Add to Bag">
+                </div>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </form>
+            {% if request.user.is_superuser %}
+                <div class="mt-5">
+                    <a href="{% url 'edit_product' product.id %}" class="admin-edit-btn mr-2">Edit meal</a>
+                    <button type="button" class="admin-delete-btn" data-toggle="modal" data-target="#delete_product{{product.id}}">
+                        Delete meal
+                    </button>
+                </div>
+                <!-- Delete modal -->
+                <div class="modal fade mt-5" id="delete_product{{product.id}}" tabindex="-1" role="dialog"
+                aria-labelledby="delete_product{{product.id}}Label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="delete_product{{product.id}}Label">Delete Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-left">
+                            <p class="mt-1">You are about to pemanantly delete this product</p>
+                            <p class="mt-1">Once you have deleted it, you cannot get it back</p>
+                            <p class="mt-1">Are you sure that you wish to delete?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn mr-2" data-dismiss="modal">Cancel</button>
+                            <a href="{% url 'delete_product' product.id %}" class="btn modal-del-btn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
