@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,30 +24,29 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand text-center" href="{% url 'homepage' %}"><span class="brand ">Macro<span class="heaven-color">Heaven</span></span></a>
+            <a class="navbar-brand text-center" href="{% url 'homepage' %}"><span class="brand ">MacroHeaven</span></a>
            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                    
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
                     </li>
                    
-                        <a class="nav-link active" aria-current="page" href="{% url 'menulist' %}">Menu</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'product' %}">Menu</a>
                     </li>
                    
                         <a class="nav-link active" aria-current="page" href="{% url 'macroblog' %}">Blog</a>
                     </li>
                     
-                        <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Contact</a>
+                        <a class="nav-link active" aria-current="page" href="{#}">Contact</a>
                     </li>
-
 
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -55,20 +54,19 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
-                <span class="navbar-text text-muted">
-                    MarcoHeaven 
-                </span>
             </div>
         </div>
     </nav>
-
+       </div>
+    </div>
+</div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -89,36 +87,12 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">MacroHeaven</p>
-        <p class="m-0 text-center text-white">12 Stanhope Gate W1K 1AW</p>
-        <p class="m-0 text-center text-white">Follow us: 
-        <div class="col-12 col-md-4 d-flex ">
-            <div class="col-sm-4">
-                
-                <ul class="list-inline social-links">
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.linkedin.com/">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                            <span class="sr-only">Linkedin </span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.facebook.com/">
-                            <i class="fab fa-facebook" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook </span>
-                        </a>
-                    </li>
-
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.instagram.com/">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram </span>
-                        </a>
-                    </li>
-                </div>
-            </div>
-            
+    <footer class="footer mt-auto py-3 light-bg">
+        <p class="m-0 text-center text-black">MacroHeaven</p>
+        <p class="m-0 text-center text-black">12 Stanhope Gate W1K 1AW</p>
+        <p class="m-0 text-center text-black">Follow us: 
+   
+                        
     </footer>
 
     <script>

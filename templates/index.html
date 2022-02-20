@@ -5,8 +5,8 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+        <!-- MACROBLOG Entries -->
+        <div class="col-12 mt-4 left">
             <div class="row">
                 {% for post in post_list %}
                 <div class="col-md-4">
@@ -17,10 +17,10 @@
                                 <img class="card-img-top"
                                     src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/quick-chicken-and-hummus-bowl-220e449.jpg?quality=90&webp=true&resize=300,272">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" width="100%" heigh="100%">
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}" >
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author"> Posted by: {{ post.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">

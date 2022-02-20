@@ -15,16 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from menulist.views import get_menu_list
+from product.views import get_product_details
 from homepage.views import get_home_page
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
     path('', get_home_page, name='homepage'),
     path('admin/', admin.site.urls),
+    path('product/', get_product_details, name='product'),
     path('macroblog/', include('macroblog.urls'), name='macroblog_urls'),
-    path('menu/', get_menu_list, name='menulist'),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+   
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

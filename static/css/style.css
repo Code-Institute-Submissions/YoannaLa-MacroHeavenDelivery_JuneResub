@@ -1,28 +1,44 @@
 body {
-    background-color: #F9FAFC;
+       font-family: lora;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
+    font-family: 'EB Garamond';
+    font-size: 3.5rem;
     font-weight: 700;
-    color: #4A4A4F;
+    font-style: italic;
+    color: #6f6fec;
 }
 
-.red-o {
-    color: #E84610;
+
+#navbarText {
+    font-style:normal;
+    font-size: 1.5rem;
+    text-align: right;
 }
 
-.thin {
-    font-weight: 300;
+.text-center {
+    text-align: center;
+    padding: 20px, 20px;
+    font-size: 16px;
 }
+
+.btn-primary {
+    background-color: #ae67e7;
+    color: #fff;
+}
+
+.home-break {
+    color: #6f6fec;
+   }
+
 
 .light-bg {
-    background-color: #fff;
+    background-color: #c4a2eb;
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #9246e9;
 }
 
 .main-bg {
@@ -30,39 +46,43 @@ body {
 }
 
 .card {
-    border: none;
+    border-radius: 5px;
     background-color: transparent;
+    font-size: 16px;
 }
 
-.image-container {
+.card-img-top {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
     position: relative;
 }
 
 .image-flash {
     position: absolute;
-    bottom: 5%;
+    bottom: 1%;
     min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
+    right: +5px;
+    background-color: #705bbe;
 }
 
 .author {
     color: white;
     margin: 4px;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 .masthead {
     margin-top: 10px;
     overflow: hidden;
-    position: relative;
+    position: center;
     display: inline-block;
     height: 33vh;
     width: 100%;
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #805ebe;
     color: white;
     position: relative;
 }
@@ -97,46 +117,53 @@ body {
 }
 
 .post-title {
-    margin-top: 20%;
+    margin-top: 15%;
     margin-left: 5%;
 }
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: rgb(81, 77, 117);
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #ae67e7;
+    color: #fff;
+}
+
+.btn-signout {
+    background-color: #ae67e7;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: #ae67e7;
+    color: #d2c9e0;
 }
 
 .link {
-    color: #23BBBB;
+    color: #ae67e7;
     text-decoration: none;
 }
 
+
+
 .link:hover,
 .link:active {
-    color: #445261;
+    color: ae67e7;
     text-decoration: underline;
 }
 
 .btn-like {
-    color: #E84610;
+    color: #ae67e7;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #ae67e7;
     background: transparent;
     border: none;
 }

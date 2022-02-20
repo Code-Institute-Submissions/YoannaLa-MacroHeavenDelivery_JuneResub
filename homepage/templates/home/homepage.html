@@ -5,33 +5,30 @@
 
 {% block content %}
 
-
-<!-- Welcome container -->
-<div class="welcome-container">
-    <div class="container-fluid">
-        <div class="row hero-height">
-            <div class="col-12 col-md-4 text-right welcome-content pr-2 pl-md-2">
-                <h1>Food plan<br>with a difrerence</h1>
-                <a class="btn" href="{% url 'menulist' %}">See menu here!</a>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="home-info-cont">
-    <div class="text-center mb-2">
-        <h2>What is macro dieta? </h2>
+    <div class="text-center">
+        <h1>What is macro dieta? </h1>
         <p>In every diet and for every weight loss goal there are three major macro nutrients that affect how (and yes, if) we reach our goals. 
             The building blocks of every diet are fats, carbs, and proteins. 
-            <br>Many people find counting macros to be helpful in building flexible and sustainable diets, without restrictive unhealthy behaviors. 
-            <br>So what are these macros? 
+            Many people find counting macros to be helpful in building flexible and sustainable diets, without restrictive unhealthy behaviors. 
+            So what are these macros? 
             Why do they matter for health and weight loss, and does the type of macros really matter?</p>
     </div>
+
+
+<!-- Welcome container -->
+<div class="jumbotron text-center">
+    <h5 >Simple food<br>fancy results!</h5>
+    <a href="{% url 'product' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Let's start here</a>
+</div>
+
+
     <hr class="home-break">
-    <!-- Details on food -->
-    <div class="row d-flex justify-content-center mb-5 mt-5">
+    <!-- Details on nutritions -->
+    <div class="row d-flex justify-content-center mb-6 mt-6">
         <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
             <div class=" home-info-text">
-                <h3 class="mb-3">Proteins</h3>
+                <h2 class="mb-3">Proteins</h2>
                 <p>While proteins aren’t usually used for fuel, they are an important part of the diet.</p>
                 <br>
                 <p>Consuming protein is critical to healing and building tissue in the body. 
@@ -49,11 +46,11 @@
     <hr class="home-break">
        <div class="row d-flex justify-content-center mb-5 mt-5">
         <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{MEDIA_URL}}healthy-food3.jpg" class="img-fluid d-none d-md-block" alt="image of healthy food">
+            <img src="{{MEDIA_URL}}healthy-food.jpg" class="img-fluid d-none d-md-block" alt="image of healthy food">
         </div>
         <div class="col-12 col-md-7 col-lg-4 pl-0 pl-md-5">
-            <div class=" home-info-text">
-            <h3 class="mb-3">Carbs</h3>
+            <div class="home-info-text">
+            <h2 class="mb-3">Carbs</h2>
             <p>The macro we most often hear about in popular culture and surrounding the weight loss discussion is of course carbs</p>
             <br>
             <p> But believe it or not, carbs are not all bad. 
@@ -72,7 +69,7 @@
     <div class="row d-flex justify-content-center mb-5 mt-5">
         <div class="col-12 col-md-7 col-lg-4 text-right pr-0 pr-md-5">
             <div class=" home-info-text">
-                <h3 class="mb-3">Fats</h3>
+                <h2 class="mb-3">Fats</h2>
                 <p>Fats help your body store vitamins and take part in building hormones such as cholesterol, testosterone and estrogen.</p>
                 <br>
                 <p>When you consume high quality fats, such as those found in nuts, avocados, olives, and fish, your body is better able to store the nutrients you consume from your other macros. 
@@ -85,7 +82,7 @@
             </div>
         </div>
         <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{ MEDIA_URL }}heatlh-food4.jpg" class="img-fluid d-none d-md-block" alt="image of food">
+            <img src="{{MEDIA_URL}}macros-balance.jpg" class="img-fluid d-none d-md-block" alt="image of food">
         </div>
     </div>
 </div>
