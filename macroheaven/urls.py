@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from product.views import get_product_details
+from product.views import get_product_details, get_product, product_add
 from homepage.views import get_home_page
 from django.conf.urls.static import static
 from django.conf import settings
@@ -24,7 +24,9 @@ from django.conf import settings
 urlpatterns = [
     path('', get_home_page, name='homepage'),
     path('admin/', admin.site.urls),
-    path('product/', get_product_details, name='product'),
+    path('product/', get_product, name='product'),
+    path('product_details/', get_product_details, name='product_details'),
+    path('add/', product_add, name='add'),
     path('macroblog/', include('macroblog.urls'), name='macroblog_urls'),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
