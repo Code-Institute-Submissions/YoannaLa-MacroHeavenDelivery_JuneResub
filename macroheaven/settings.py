@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'homepage',
     'macroblog',
     'product',
+    'bag',
 ]
 
 SITE_ID = 1

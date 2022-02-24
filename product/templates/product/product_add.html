@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-12 col-lg-5 mt-3">
                     <h2>Add a meal</h2>
-                    <form method="POST" action="{% url 'product_add' %}" enctype="multipart/form-data">
+                    <form method="POST" action="{% url 'add' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% for field in form %}
                             {% if field.name != 'image' %}
@@ -22,10 +22,14 @@
                                 {{ field }}
                             {% endif %}
                         {% endfor %}
-                        <a class="btn" href="{% url 'product_add' %}">Cancel</a>
+                                           
+                        <a class="btn" href="{% url 'add' %}">Add</a>
                         <button type="submit" class="btn">Add Product</button>
-                    </form>
-                </div>
+
+                        <a class="btn" href="{% url 'details' %}">Show detials </a>
+                        <button type="submit" class="btn">Show Details </button>
+
+                        
             </div>
         </div>
     </div>
