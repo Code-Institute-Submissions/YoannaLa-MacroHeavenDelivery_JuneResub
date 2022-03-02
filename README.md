@@ -1,7 +1,7 @@
 # MacroHeavenDelivery
 MacroheavenDelivery is an online delivery website that allows customers to choose their meals base on the macro programme. The first page explains what macro programme is and explain the basics. Users can also contact the website regarding personalised macrocalucation by a nutritionist(contact section).
 
-You can find the live site https://github.com/YoannaLa/MacroHeavenDelivery
+You can find the live site https://yoannala.github.io/MacroHeavenDelivery/
 
 
 # Contents
