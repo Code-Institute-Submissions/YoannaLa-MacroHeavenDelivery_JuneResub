@@ -42,9 +42,11 @@
             </div>
         </div>
     </div>
+    
+<!-- Next / previouslpage as only 3 blogs per page -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
+        <ul class="pagination justify-right-center">
             {% if page_obj.has_previous %}
             <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
             {% endif %}

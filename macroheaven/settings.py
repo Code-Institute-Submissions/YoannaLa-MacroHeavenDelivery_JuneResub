@@ -30,8 +30,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+DEBUG = True
+# DEBUG = 'DEVELOPMENT' in os.environ
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-yoannala-macroheavendel-0siyez3af5n.ws-eu47.gitpod.io']
 
 ALLOWED_HOSTS = ['macroheavendelivery.herokuapp.com', 'localhost']
 
@@ -158,13 +162,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
  
 # Default primary key field type
