@@ -12,8 +12,11 @@ body {
 
 footer{
     background-color: rgb(112, 91, 190, 0.3);
+    position: sticky;
     text-align: center;
-
+    bottom: 0; 
+    left: 0; 
+    z-index: 1030;
 }
 
 .social-links a i {
