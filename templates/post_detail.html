@@ -32,9 +32,11 @@
                 <div class="row">
 
                     <div class="col-1">
+
+                        <!-- adding likes by clicking on the heart icon-->
                         <strong> 
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{ url 'post_like' post.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
 
@@ -70,6 +72,7 @@
             <hr>
         </div>
     </div>
+    <!-- Comments box goes here for comment-->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
@@ -96,7 +99,7 @@
                 <!-- Adding approval to the comments  -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
+                    Your comment is awaiting approval from admin!
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
