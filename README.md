@@ -32,6 +32,9 @@ You can find the live site https://yoannala.github.io/MacroHeavenDelivery/
 # User Experience
 ## User Stories
 
+This website was created with agile and design thinking approach. 
+I put myself in the user shoes and wanted to created a website that it is easy to navigate, easy to register and simple function of loggin in and loging out. I have created a project in this repository called MacroHeaven Board and add few issues with lables that I must have, should have, could have and wont have lables and added them the issue. As I was codding I started to move the "to do" item to "in progress/doing" column and when I Done/finished column when the issue was added to the site 
+
 ### As an unregistered, I want to:
 
 + be able to checkout the website and find out about macrodieta 
