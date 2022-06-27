@@ -10,11 +10,16 @@ body {
     color: #6f6fec;
 }
 
+footer{
+    background-color: rgb(112, 91, 190, 0.3);
+    text-align: center;
+
+}
 
 #navbarText {
     font-style:normal;
     font-size: 1.5rem;
-    text-align: right;
+    text-align: left;
 }
 
 .text-center {
@@ -32,6 +37,7 @@ body {
     color: #6f6fec;
    }
 
+  
 
 .light-bg {
     background-color: #c4a2eb;
@@ -146,7 +152,6 @@ body {
     color: #ae67e7;
     text-decoration: none;
 }
-
 
 
 .link:hover,
