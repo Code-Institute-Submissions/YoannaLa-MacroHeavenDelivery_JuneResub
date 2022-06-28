@@ -31,6 +31,16 @@ def add_to_bag(request, item_id):
     return redirect(redirect_url)
 
 
+def adjust_bag(request, item_id):
+    """Adjust the quantity of the specified product to the specified amount"""
+
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+   
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
+
+
 def edit_bag(request, item_id):
     """ Edit products in bag """
 

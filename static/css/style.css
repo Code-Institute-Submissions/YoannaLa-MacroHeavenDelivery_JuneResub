@@ -162,6 +162,11 @@ footer{
     color: #fff;
 }
 
+.btn-purple  {
+    color: #ae67e7;
+
+}
+
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #ae67e7;
