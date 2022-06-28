@@ -5,6 +5,11 @@ MacroheavenDelivery is an online delivery website that allows customers to choos
 
 You can find the live site  https://macroheavendelivery.herokuapp.com
 
+Superuser details are:
+username:joannaelazarek@yahoo.co.uk
+eamil address: joannaelazarek@yahoo.co.uk
+password: Tomcio99
+
 
 # Contents
 + [User Experience](#user-experience)
