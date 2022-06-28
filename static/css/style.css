@@ -173,6 +173,10 @@ footer{
     text-decoration: none;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
 
 .link:hover,
 .link:active {
