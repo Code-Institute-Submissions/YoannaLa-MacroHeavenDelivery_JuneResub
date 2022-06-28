@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -65,13 +66,13 @@
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    <input class="form-control form-control qty_input" type="number"
+                                                    <input class="form-control form-control-sm qty_input" type="number"
                                                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                         data-item_id="{{ item.item_id }}"
                                                         id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty btn btm-sm btn-purple rounded-0"
-                                                            data-item_id="{{ item.item_id}}" id="increment-qty_{{ item.item_id }}">
+                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
