@@ -1,73 +1,39 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-{% load bag_tools %}
 
-{% block extra_title %}Bag{% endblock %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
+    <div class="overlay"></div>
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Shopping Bag</h2>
+                <hr>
+            </div>
+        </div>
 
-<div class="main-container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-xl-6 col-xxl-4 mx-auto">
-            <h1 class="page-title">Bag</h1>
-            <hr class="page-title-hr">
-            <div class="row">
-                <div class="col-12 mt-3">
-                    {% if bag_items %}
-                        {% for item in bag_items %}
-                            <div class="row">
-                                <div class="col-6 col-sm-3 mt-2">
-                                    <img src="{{ item.product.image.url }}" class="bag-img" alt="{{ item.product.name }}">
-                                </div>
-                                <div class="col-6 col-sm-3 mt-2">
-                                    <p>"{{ item.product.name }}"</p>
-                                    <p>£{{ item.product.price }}</p>
-                                </div>
-                                <!-- Quantity update box -->
-                                <div class="col-6 col-sm-3 mt-2">
-                                    <a class="update-link">Update</a>
-                                    <form class="update-form" method="POST" action="{% url 'edit_bag' item.item_id %}">
-                                        {% csrf_token %}
-                                        <div class="form-group qty-form">
-                                            <div class="input-group">
-                                                <p>Qty:</p>
-                                                <input class="form-control qty_input" type="number" name="quantity"
-                                                    value="{{ item.quantity }}" min="0" max="99" data-item_id="{{ item.item_id }}"
-                                                    id="id_qty_{{ item.item_id }}">
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <a class="remove-item" id="remove_{{ item.item_id }}">Remove</a>
-                                </div>
-                                <div class="col-6 col-sm-3 mt-2">
-                                    <p>Subtotal:</p>
-                                    <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                                </div>
-                            </div>
-                            <hr class="page-title-hr mt-3">
-                        {% endfor %}
-                        <div class="ml-auto text-right mt-3">
-                            <p>Subtotal: €{{ total|floatformat:2 }}</p>
-                            {% if delivery %}
-                                <p>Delivery: £{{ delivery|floatformat:2 }}</p>
-                            {% endif %}
-                            <p class="top-text"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></p>
-                            <a class="btn" href="{% url 'products' %}">Continue Shopping</a>
-                            <a class="btn" href="{% url 'signin_guest' %}">Checkout</a>
-                        </div>
-                    {% else %}
-                        <h2>Your bag is empty</h2>
-                        <a class="btn" href="{% url 'products' %}">Shop Now!</a>
-                    {% endif %}
-                </div>
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive rounded"></div>
+                {% else %}
+                    <p class="lead mb-5">Your bag is empty</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Go back to the menu</span>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
-</div>
-
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-    <script src="{% static 'bag/js/bag.js' %}"></script>
 {% endblock %}

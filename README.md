@@ -54,7 +54,7 @@ Ive used the same MVT models as Code Institute videos, database models was struc
 + have a record of any past purchasing activity 
 + like/comment on the blog posts
 + write posts, which are reviewed by administrator 
-+ 
+
 
 ### As the site administrator, I want to:
 
@@ -65,12 +65,12 @@ Ive used the same MVT models as Code Institute videos, database models was struc
 ## Design
 ### Overall Feel
 
-I wanted and easy fussy free site, with a simple design. Macro dieta is extremely effective food programme and it is very basic in delivery, so wanted that to be reflected in my site. 
+I wanted and easy to use site, with a simple design. Macro dieta is extremely effective food programme and it is very basic in delivery, so wanted that to be reflected in my site. 
 
 
 ### Imagery
 
-The imagery throughout the site is of the simple meals with a sort discirption
+The imagery throughout the site is of the simple meals with a sort discirption and blog with few images to make the UX better
 
 # Features
 ## Current Features

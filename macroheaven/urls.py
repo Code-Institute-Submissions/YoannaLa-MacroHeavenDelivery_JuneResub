@@ -30,6 +30,7 @@ urlpatterns = [
     path('macroblog/', include('macroblog.urls'), name='macroblog_urls'),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
+    path('bag/', include('bag.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

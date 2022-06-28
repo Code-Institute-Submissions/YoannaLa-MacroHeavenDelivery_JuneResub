@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
+
 from .models import Product
 from .forms import ProductForm
 
@@ -72,13 +73,13 @@ def product_details(request, product_id):
 
     return render(request, 'product/product_details.html', context)
 
-def product_add(request):
-      return render(request, 'product/add.html')
+def product_add(request, product_id):
+      return render(request, 'product/product_add.html')
 
 
-def product_edit(request):
-      return render(request, 'product/edit.html')
+def product_edit(request, product_id):
+      return render(request, 'product/product_edit.html')
 
 
-def product_delete(request):
-      return render(request, 'product/delete.html')
+def product_delete(request, product_id):
+      return render(request, 'product/product_delete.html')
