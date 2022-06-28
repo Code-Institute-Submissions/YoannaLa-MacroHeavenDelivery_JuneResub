@@ -120,21 +120,22 @@ From the product detail page, the user can view:
 
 ### **Admin CRUD functionality**
 
-Had an issue with the gitpod and internet stability in last 2 weeks, so I couldn’t finished it 
+A user can add meals to the bag
 
 ### **Bag**
 
-Had an issue with the gitpod and internet stability in last 2 weeks, so I couldn’t finished it 
+A user is able to add, update and remove meals from the bag. 
 
+# Testing
 
-### **Checkout**
+This was very difficult, I didn't understand what is expected from me to pass this section.
+Slack community seems to think is only for the merit, and it is not the basic, so very confused here.
 
-Had an issue with the gitpod and internet stability in last 2 weeks, so I couldn’t finished it 
+However, I followed the video and did some testing wit Uniitest, created to finest test_evens and events
 
-### **Contact page**
+Also installed pytest and run some basic testing one fail and one for pass - woudld be good to find out more what I need to do to achive a PASS on this project in more details - testing is defininlty very complicated
 
-Had an issue with the gitpod and internet stability in last 2 weeks, so I couldn’t finished it 
-
+![screenshot pytest](media/Test.py.png)
 
 ### **Blog**
 
