@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<!DOCTYPE html>
+
 <div class="container-fluid">
     <div class="row">
 
@@ -15,9 +17,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/quick-chicken-and-hummus-bowl-220e449.jpg?quality=90&webp=true&resize=300,272">
+                                    src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/quick-chicken-and-hummus-bowl-220e449.jpg?quality=90&webp=true&resize=300,272" alt="photo of food">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" >
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" >
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author"> Posted by: {{ post.author }}</p>

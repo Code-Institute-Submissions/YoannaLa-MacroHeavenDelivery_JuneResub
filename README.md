@@ -168,6 +168,19 @@ Also installed pytest and run some basic testing one fail and one for pass - wou
 
 ![screenshot pytest](media/Test.py.png)
 
+CSS Validator 
+
+I run my CSS throu W3 CSS Validator I had 27 errors to start end up with 13
+
+![screenshot CSS testing](media/CSStesting.png)
+
+HTML validator 
+
+I run my HTML code by W3 Validator and fixed some errors, most of them had alt atribute missing
+
+![screenshot HTML testing](media/WS3.HTML.png)
+
+
 ### **Blog**
 
 The site has a blog section
