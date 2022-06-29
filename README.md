@@ -79,11 +79,39 @@ The imagery throughout the site is of the simple meals with a sort discirption a
 
 # Features
 ## Current Features
-### **Navigation menu displayed across all pages**
+**Navigation menu displayed across all pages**
 
 The navigation menu will help the user move easily across all pages.
 
 The navigation buttons update depending on whether a user is logged in or not, and whether that user is the admin:
+
+Home page with some information regarding macro dieta
+
+![screenshot homepage](media/homePage.png)
+
+There is a blog page where user can see all the blogs and clinck into to the chosen one for more details.
+
+![screenshot blog](media/blog.png)
+
+![screenshot blog details](media/blogDetails.png)
+
+The register user can leave comments and like and unlike post
+
+![screenshot blog comments](media/BlogComments.png)
+
+![screenshot blog likes](media/likeFunction.png)
+
+There is a bag function so the user can see what they planning to purchase
+
+![screenshot bag](media/bag.png)
+
+The mene function shows the meals on offer
+
+![screenshot menu](media/Menu.png)
+
+By clicking into the chosen meal you can see the details
+
+![screenshot meal details](media/MealDetails.png)
 
 ### **User registration not required**
 
@@ -120,9 +148,12 @@ From the product detail page, the user can view:
 
 ### **Admin CRUD functionality**
 
-A user can add meals to the bag
+A user can add meals to the bag and update and remove meals from the bag
+The admin user can create, read, update and delete the posts and meals.
 
 ### **Bag**
+
+The user can add meal to the bag the photo, name and price of the meal. 
 
 A user is able to add, update and remove meals from the bag. 
 
@@ -144,11 +175,12 @@ The site has a blog section
 + Blogs can be commented on when login and like
 + Comments are revied and approved by administrations 
 
+![screenshot blog](media/blog.png)
+![screenshot blog](media/blogDetao.png)
 
 # Database
 
 Two relational databases were used to create this site - during production SQLite was used and then Postgres was used for the deployed Heroku version. 
-
 
 
 # Technologies Used
